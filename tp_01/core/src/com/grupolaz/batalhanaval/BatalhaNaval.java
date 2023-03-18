@@ -6,9 +6,10 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector;
+import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.Array;
-import com.grupolaz.batalhanaval.Ship;
 
 public class BatalhaNaval extends ApplicationAdapter {
 	private SpriteBatch batch;
@@ -16,6 +17,7 @@ public class BatalhaNaval extends ApplicationAdapter {
 	private OrthographicCamera camera;
 	private Rectangle table;
 	private Array<Rectangle> tiles;
+	private Vector3 posToque;
 	
 	@Override
 	public void create () {
@@ -56,6 +58,11 @@ public class BatalhaNaval extends ApplicationAdapter {
 		ScreenUtils.clear(0.25f,0.01f,0.19f,1);
 
 		camera.update();
+
+		if(Gdx.input.isTouched()) {
+			posToque = new Vector3();
+			posToque.set(Gdx.input.getX(), Gdx.input.getY(), 0);
+		}
 	}
 	
 	@Override
