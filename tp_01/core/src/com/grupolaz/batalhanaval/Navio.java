@@ -57,6 +57,12 @@ abstract class Navio {
     }
 
     public boolean atiraNoBarco(int iPosX, int iYPos){
-        
+        if(isAcertado(iPosX, iYPos)){
+            
+        }
+        return false;
+    }
+    private boolean isAcertado(int iPosX2, int iYPos) {
+        return false;
     } 
 }
