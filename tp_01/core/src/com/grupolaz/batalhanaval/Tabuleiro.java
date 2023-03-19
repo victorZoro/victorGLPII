@@ -6,23 +6,26 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
-import java.awt.*;
+import com.badlogic.gdx.math.Rectangle;
+
 
 
 public class Tabuleiro {
 
-    private Array<Rectangle> rCasas;
+    public static Array<Rectangle> rCasas;
 
     public static final int SIZE_TABULEIRO = 10; //tabuleiro 10x10
     public static final int SIDE_CASA = 64; //cada casa tem 64x64 pixels
-    public static final Texture TEXTURE_TABULEIRO = new Texture(Gdx.files.internal("tabuleiro.png"));
     private static final Color ALPHA_WHITE = new Color(1, 1, 1, 0.6f);
 
     public Tabuleiro() {
-        
+
+        criaTabuleiro();
+
     }
 
     public void criaTabuleiro() {
@@ -35,7 +38,6 @@ public class Tabuleiro {
     }
 
     public void desenhaTabuleiro(Batch bBatch, OrthographicCamera cCamera, ShapeRenderer sForma, Vector3 vMousePosition) {
-        ALPHA_WHITE.add(ALPHA_WHITE);
 
         vMousePosition.set(Gdx.input.getX(), Gdx.input.getY(), 0);
         cCamera.unproject(vMousePosition);
@@ -48,8 +50,15 @@ public class Tabuleiro {
 
             if(rCasa.contains(x, y)) {
                 sForma.setColor(Color.BLACK);
-                sForma.begin(ShapeType.)
+                sForma.begin(ShapeType.Filled);
+                sForma.rect(rCasa.x, rCasa.y, SIDE_CASA, SIDE_CASA);
+            } else {
+                sForma.setColor(ALPHA_WHITE);
+                sForma.begin(ShapeType.Line);
+                sForma.rect(rCasa.x, rCasa.y, SIDE_CASA, SIDE_CASA);
             }
+
+            sForma.end();
         }
     }
 
