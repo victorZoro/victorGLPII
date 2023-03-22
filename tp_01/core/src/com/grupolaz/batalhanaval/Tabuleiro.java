@@ -11,7 +11,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.math.Rectangle;
-
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 
 public class Tabuleiro {
@@ -37,7 +37,7 @@ public class Tabuleiro {
         }
     }
 
-    public void desenhaTabuleiro(Batch bBatch, OrthographicCamera cCamera, ShapeRenderer sForma, Vector3 vMousePosition) {
+    public void desenhaTabuleiro(SpriteBatch bBatch, OrthographicCamera cCamera, ShapeRenderer sForma, Vector3 vMousePosition) {
 
         vMousePosition.set(Gdx.input.getX(), Gdx.input.getY(), 0);
         cCamera.unproject(vMousePosition);
@@ -60,8 +60,7 @@ public class Tabuleiro {
 
             sForma.end();
         }
+        
     }
-
-
 }
 
