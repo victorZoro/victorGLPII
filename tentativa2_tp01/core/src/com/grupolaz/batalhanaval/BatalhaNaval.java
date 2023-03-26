@@ -1,11 +1,12 @@
 package com.grupolaz.batalhanaval;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture; //Deletar caso não usemos
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
@@ -18,9 +19,7 @@ public class BatalhaNaval extends ApplicationAdapter {
 	SpriteBatch batch;
 	OrthographicCamera camera;
 	Table table;
-
 	Vector3 mouse_position;
-	ShapeRenderer square;
 
 	/**
 	 * Inicializa o ambiente
@@ -38,6 +37,8 @@ public class BatalhaNaval extends ApplicationAdapter {
 		batch = new SpriteBatch();
 
 		mouseClicked();
+
+		Gdx.graphics.getGL20().glEnable(GL20.GL_BLEND); //Calls OpenGL to enable transparency
 	}
 
 	/**
@@ -51,35 +52,32 @@ public class BatalhaNaval extends ApplicationAdapter {
 
 		batch.setProjectionMatrix(camera.combined); //Configura a posição do lote para 0,0
 
-		float x = mouse_position.x;
-		float y = mouse_position.y;
-
-		//mouseHover(); //Essa função está causando erro!
-
+		
 		batch.begin(); //Começa a desenhar elementos;
 		table.drawTable(batch);
 		batch.end(); //Finaliza a rendereização de elementos;
+		
+		//mouseHover(); //Essa função está causando erro!
 	}
 	
 	/**
 	* Confere se o mouse foi clicado e executa ${AÇÃO AQUI}
 	*
-	* OBS: PERGUNTAR AO ALISSON O QUE ESSA FUNÇÃO FAZ, COM EXATIDÃO
+	* @see source O código desta função foi retirado de uma fonte externa da internet, disponível em: http://gpjecc.blogspot.com/2023/03/libgdx-mariz-na-tela-pegando-posicao-do.html
 	*/		
 	public void mouseClicked() {
 		Gdx.input.setInputProcessor(new InputAdapter() {
 			@Override
 			public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-				System.out.println("Clicou!");
 				mouse_position.set(Gdx.input.getX(), Gdx.input.getY(), 0);
 				camera.unproject(mouse_position); //Desprojeta o mouse da tela e dá a ele a origem do mundo (0,0 no canto inferior esquerdo)
 
-				float x = mouse_position.x;
-				float y = mouse_position.y;
+				int x = (int)mouse_position.x / table.getTileSize();
+				int y = (int)mouse_position.y / table.getTileSize();
 
 				for(Rectangle tile: table.getTiles()) {
 					if(tile.contains(x, y)) {
-						System.out.println("Clicou em x: " + (int)x/64 + " y: " + (int)y/64);
+						System.out.println("Clicou em x: " + x + " y: " + y);
 						break;
 					}
 				}
@@ -90,8 +88,13 @@ public class BatalhaNaval extends ApplicationAdapter {
 
 	public void mouseHover() { //Essa função está causando erro!
 		mouse_position.set(Gdx.input.getX(), Gdx.input.getY(), 0); //Configura a variável para receber a posição onde o input foi chamado
+		
 		camera.unproject(mouse_position); //Desprojeta o mouse da tela e dá a ele a origem do mundo (0,0 no canto inferior esquerdo)
-		table.tableHover(square, camera, 0, 0);
+		
+		float x = mouse_position.x;
+		float y = mouse_position.y;
+
+		//table.tableHover();
 	}
 	
 	/**

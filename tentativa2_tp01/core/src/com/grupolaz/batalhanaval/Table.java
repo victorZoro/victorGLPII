@@ -13,7 +13,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.Gdx;
 
 /**
- * Classe que inicializa e renderiza o tabuleiro na tela.
+ * Classe responsável por todas as funções relacionadas ao tabuleiro.
  */
 
 public class Table {
@@ -50,7 +50,7 @@ public class Table {
     /**
      * Desenha tabuleiro na tela. Não possui batch.begin(), pois será utilizada dentro do arquivo BatalhaNaval.java.
      * 
-     * @param batch - Recebe o lote de sprites do arquivo principal BatalhaNaval.java.
+     * @param batch : Recebe o lote de sprites do arquivo principal BatalhaNaval.java.
      */
     public void drawTable(SpriteBatch batch) {
         batch.draw(table, table.getX(), table.getY());  //desenha a textura tabulerio nas posiçoes getX e getY;      
@@ -59,39 +59,42 @@ public class Table {
     /**
      * Renderiza um retângulo de outra cor por cima da casa que o mouse se encontra.
      * 
-     * @param square - Forma a ser renderizada dentro do arquivo BatalhaNaval.java.
-     * @param camera - Camera utilizada dentro do arquivo BatalhaNaval.java.
-     * @param x - Posição x do mouse.
-     * @param y - Posição y do mouse.
      */
-    public void tableHover(ShapeRenderer square, OrthographicCamera camera, int x, int y) {
-        for(Rectangle tile: tiles) {
-            square.setProjectionMatrix(camera.combined); //Configura a posição da forma para 0,0
-            
-            if(tile.contains(x, y)) {
-                square.begin(ShapeType.Filled); //Inicializa a forma como preenchida
-                square.setColor(Color.WHITE); //Configura a cor como Branco
-                square.rect(tile.x, tile.y, tile.width, tile.height); //Configura o tamanho (uma casa)
-            } else {
-                square.begin(ShapeType.Line); //Inicializa a forma como traçado
-                square.setColor(Color.BLACK); //Configura a cor como Preto
-                square.rect(tile.x, tile.y, tile.width, tile.height); //Configura o tamanho (uma casa)
-            }
-            square.end(); //Finaliza a forma
-        }
+    public void tableHover() {
     }
 
 
     /**
      * Dá acesso das casas do tabuleiro para outras classes
      * 
-     * @return - Retorna o array de casas
+     * @return Retorna o array de casas
      */
     public Array<Rectangle> getTiles() { 
         return tiles;
     }
-    
 
+    /**
+     * Dá acesso às dimensões do tabuleiro.
+     * 
+     * @return Retorna o tamanho de cada dimensão do tabuleiro.
+     */
+    public int getTableSize() {
+        return TABLE_SIZE;
+    }
+
+    /**
+     * Dá acesso às dimensões de cada casa.
+     * 
+     * @return Retorna o tamanho de cada dimensão de uma casa.
+     */
+    public int getTileSize() {
+        return TILE_SIZE;
+    }
+
+    
+    /**
+     * Remove da memória tudo que precisa ser removido dentro da classe Table
+     */
     public void tableDispose() {
         texture.dispose();
     }
