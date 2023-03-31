@@ -14,6 +14,21 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputAdapter;
 
 
+class Barquinho {
+	public int tamanho = 4;
+	public Texture texturaBarquinho;
+	public Sprite barquinho;
+	public int x, y;
+
+	public Barquinho(int x, int y) {
+		this.x = x;
+        this.y = y;
+        texturaBarquinho = new Texture("barquinho.png");
+        barquinho = new Sprite(texturaBarquinho);
+	}
+
+}
+
 
 public class BatalhaNaval extends ApplicationAdapter {
 	SpriteBatch batch;
@@ -39,6 +54,8 @@ public class BatalhaNaval extends ApplicationAdapter {
 		mouseClicked();
 
 		Gdx.graphics.getGL20().glEnable(GL20.GL_BLEND); //Calls OpenGL to enable transparency
+		
+
 	}
 
 	/**
@@ -56,7 +73,8 @@ public class BatalhaNaval extends ApplicationAdapter {
 		batch.begin(); //Começa a desenhar elementos;
 		table.drawTable(batch);
 		batch.end(); //Finaliza a rendereização de elementos;
-		
+
+	
 		//mouseHover(); //Essa função está causando erro!
 	}
 	
