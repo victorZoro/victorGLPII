@@ -80,7 +80,7 @@ public class Table {
      */
     private void placeShips(List<Ship> ships) {
         Random randomPosition = new Random();
-        Point position = new Point();
+        Point position;
 
         //Percorre os navios
         for(Ship ship: ships) {
@@ -89,8 +89,7 @@ public class Table {
 
             while(!ship.isPlaced()) {
                 //Gera uma posição aleatória
-                position.x = randomPosition.nextInt(LARGURA);
-                position.y = randomPosition.nextInt(ALTURA);
+                position = new Point(randomPosition.nextInt(LARGURA), randomPosition.nextInt(ALTURA));
 
                 //Gera uma orientação aleatória
                 ship.setOrientation(randomPosition.nextBoolean());

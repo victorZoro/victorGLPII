@@ -24,7 +24,7 @@ public class Tile {
         this.ship = null; 
     }
 
-        /**
+    /**
      * <h3>Configura o navio naquela posição</h3
      * 
      * @param ship <p>- navio a ser posicionado.</p>
@@ -80,7 +80,6 @@ public class Tile {
     public Point getPosition() {
         return position;
     }
-
 
     /**
      * <h3>Retorna se a casa tem algum navio.</h3>
