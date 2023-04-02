@@ -1,0 +1,2 @@
+background = https://opengameart.org/content/ocean-background
+tile2 = https://imgur.com/t/pixel_art/rJaJaAq

@@ -9,9 +9,9 @@ public class Player {
     private boolean isWinner;
 
     /**
-     * Construtor da classe Player.
+     * <h3>Construtor da classe Player.</h3>
      * 
-     * @param bombCount - Quantidade de bombas
+     * @param bombCount <p>- Quantidade de bombas</p>
      */
     public Player(int bombCount) {
         this.bombCount = bombCount;
@@ -19,63 +19,63 @@ public class Player {
     }
 
     /**
-     * Configura a pontuação do jogador
+     * <h3> Configura a pontuação do jogador</h3>
      * 
-     * @param score - Pontuação atual do jogador
+     * @param score <p>- Pontuação atual do jogador</p>
      */
     public void addScore(int score) {
         this.currentScore += score;
     }
 
     /**
-     * Configura a pontuação máxima do jogador
+     * <h3>Configura a pontuação máxima do jogador</h3>
      * 
-     * @param maxScore - Pontuação máxima do jogador
+     * @param maxScore <p>p>- Pontuação máxima do jogad</p>or
      */
     public void setMaxScore(int maxScore) {
         this.maxScore = maxScore;
     }
 
     /**
-     * Configura o nome do jogador.
+     * <h3>Configura o nome do jogador.</h3>
      * 
-     * @param name - Nome do jogador
+     * @param name <p>- Nome do jogador</p>
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * Configura o estado do jogador
+     * <h3>Configura o estado do jogador</h3>
      * 
-     * @param isWinner - Estado do jogador.
+     * @param isWinner <p>- Estado do jogador.</p>
      */
     public void setState(boolean isWinner) {
         this.isWinner = isWinner;
     }
 
     /**
-     * Retorna a quantidade de bombas que o jogador possui.
+     * <h3>Retorna a quantidade de bombas que o jogador possui.</h3>
      * 
-     * @return - quantidade de bombas
+     * @return <p>- quantidade de bombas</p>
      */
     public int getBombCount() {
         return bombCount;
     }
 
     /**
-     * Retorna a pontuação do jogador
+     * <p>Retorna a pontuação do jogador</p>
      * 
-     * @return - pontuação atual do jogador
+     * @return <p>- pontuação atual do jogador</p>
      */
     public int getScore() {
         return currentScore;
     }
 
     /**
-     * Retorna a pontuação máxima do jogador
+     * <h3>Retorna a pontuação máxima do jogador</h3>
      * 
-     * @return - pontuação máxima do jogador
+     * @return <p>- pontuação máxima do jogador</p>
      */
     public int getMaxScore() {
         return maxScore;
@@ -91,10 +91,10 @@ public class Player {
     }
     
     /**
-     * Testa se ainda há bombas para o jogador
+     * <h3>Testa se ainda há bombas para o jogador</h3>
      * 
-     * @return - true: ainda possui bombas.
-     *         - false: não possui mais bombas.
+     * @return <p>- true: ainda possui bombas.</p>
+     *         <p>- false: não possui mais bombas.</p>
      */
     public boolean isThereBomb() {
         if(bombCount != 0) {
@@ -104,17 +104,17 @@ public class Player {
     }
 
     /**
-     * Retorna o estado do jogador
+     * <h3>Retorna o estado do jogador</h3>
      * 
-     * @return - true: jogador venceu!
-     *         - false: jogador perdeu!
+     * @return <p>- true: jogador venceu!</p>
+     *         <p>- false: jogador perdeu!</p>
      */
     public boolean isWinner() {
         return isWinner;
     }
 
     /**
-     * Diminui a quantidade de bombas que o jogador possui
+     * <h3>Diminui a quantidade de bombas que o jogador possui</h3>
      * 
      */
     public void strike() {

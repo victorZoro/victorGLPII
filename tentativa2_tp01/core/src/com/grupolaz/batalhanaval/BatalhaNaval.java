@@ -1,21 +1,12 @@
 package com.grupolaz.batalhanaval;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Game;
 
 
-public class BatalhaNaval extends ApplicationAdapter {
+public class BatalhaNaval extends Game {
 
 	public void create () {
-
-	}
-
-	@Override
-	public void render () {
-
-	}
-
-	@Override
-	public void dispose () {
-
+		setScreen(new GameScreen(this, 1));
 	}
 }

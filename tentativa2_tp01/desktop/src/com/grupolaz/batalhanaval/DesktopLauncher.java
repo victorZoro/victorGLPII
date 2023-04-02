@@ -12,20 +12,16 @@ import com.grupolaz.batalhanaval.BatalhaNaval;
  * @author: Anna Luisa Andrade da Silva
  * @author: Lucas Vinicios Santos da Cruz
  * @author: Victor Gabriel Ribeiro Mariano
- * @version: 0.0.1
+ * @version: 1.3.0
  */
 
 public class DesktopLauncher {
 	public static void main(String[] arg) {
 		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
 
-		config.setTitle("Batalha Naval"); // Configura o título
-
-		config.setForegroundFPS(60); // Configura a quantidade de quadros por segundo
-
-		config.setWindowedMode(640, 640); // Configura o tamanho da tela em modo janela
-
-		config.setResizable(false); // Configura para que a tela não seja redimensionável
+		config.setForegroundFPS(60);
+		config.setTitle("Batalha Naval");
+		config.setWindowSizeLimits(800, 600, 9999, 9999);
 
 		new Lwjgl3Application(new BatalhaNaval(), config);
 	}
