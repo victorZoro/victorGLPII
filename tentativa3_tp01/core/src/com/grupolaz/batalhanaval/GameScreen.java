@@ -39,6 +39,13 @@ public class GameScreen extends ScreenAdapter {
     private static final int TILES_PADDING = 1;
     private static final float BACKGROUND_MUSIC_VOLUME = 0.2f;
 
+    final String tile2 = "assets/table/tile2.png";
+    final String  tile2_blood = "assets/table/tile2_blood.png";
+    final String explosion = "assets/table/explosion.png";
+    final String dead_fish = "assets/table/dead_fish.png";
+    final String hover = "assets/table/hover.png";
+    final String background = "assets/table/background.png";
+
     private Game game;
     private Board gameTable;
     private int difficulty;
@@ -68,27 +75,30 @@ public class GameScreen extends ScreenAdapter {
     private void loadAssets() {
         assets = new AssetManager();
 
-        //Carrega texturas
-        assets.load("/gameassets/table/tile2.png", Texture.class);
-        assets.load("/gameassets/table/tile2_blood.png", Texture.class);
-        assets.load("/gameassets/table/explosion.png", Texture.class);
-        assets.load("/gameassets/table/dead_fish.png", Texture.class);
-        assets.load("/gameassets/table/hover.png", Texture.class);
-        assets.load("/gameassets/table/background.png", Texture.class);
+        assets.load(tile2, Texture.class);
+        assets.load(tile2_blood, Texture.class);
+        assets.load(explosion, Texture.class);
+        assets.load(dead_fish, Texture.class);
+        assets.load(hover, Texture.class);
+        assets.load(background, Texture.class);
 
         //Carrega sound effects
-        assets.load("/gameassets/sounds/hit.wav", Sound.class);
-        assets.load("/gameassets/sounds/miss.wav", Sound.class);
-        assets.load("/gameassets/sounds/ship_sunk.wav", Sound.class);
-        assets.load("/gameassets/sounds/hover.mp3", Sound.class);
-        assets.load("/gameassets/sounds/player_wins.wav", Sound.class);
-        assets.load("/gameassets/sounds/player_loses.wav", Sound.class);
-        assets.load("/gameassets/music/ig_song.wav", Sound.class);
-        assets.finishLoading();
 
+        assets.load("sounds/hit.wav", Sound.class);
+        assets.load("sounds/miss.wav", Sound.class);
+        assets.load("sounds/ship_sunk.wav", Sound.class);
+        assets.load("sounds/hover.mp3", Sound.class);
+        assets.load("sounds/player_wins.wav", Sound.class);
+        assets.load("sounds/player_loses.wav", Sound.class);
+        String ig_song = "assets/music/backgroundmusic.wav";
+        assets.load(ig_song, Sound.class);
+        
+        assets.update();
+        assets.finishLoading();
         //Carrega a música de fundo
-        backgroundMusic = assets.get("/gameassets/music/ig_song.wav");
+        //backgroundMusic = assets.get(ig_song);
         backgroundMusic.setVolume(BACKGROUND_MUSIC_VOLUME);
+     
 
     }
 

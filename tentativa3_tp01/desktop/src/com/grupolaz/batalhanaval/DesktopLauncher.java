@@ -12,7 +12,7 @@ import com.grupolaz.batalhanaval.BatalhaNaval;
  * @author: Anna Luisa Andrade da Silva
  * @author: Lucas Vinicios Santos da Cruz
  * @author: Victor Gabriel Ribeiro Mariano
- * @version: 1.3.0
+ * @version: 0.3.0
  */
 
 public class DesktopLauncher {

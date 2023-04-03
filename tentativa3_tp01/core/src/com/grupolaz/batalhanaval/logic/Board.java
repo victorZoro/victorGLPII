@@ -196,10 +196,10 @@ public class Board {
     public void printTable() {
         int count = 0;
 
-        System.out.print("   ");
+        System.out.print("    ");
 
         for(char letter = 'A'; letter <= 'J'; letter++) {
-            System.out.print(letter + "");
+            System.out.print(letter + "   ");
         }
         System.out.println();
 

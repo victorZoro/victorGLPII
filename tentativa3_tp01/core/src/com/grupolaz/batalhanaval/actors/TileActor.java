@@ -1,6 +1,7 @@
 package com.grupolaz.batalhanaval.actors;
 
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.assets.loaders.TextureLoader.TextureParameter;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
@@ -81,7 +82,7 @@ public class TileActor extends Actor {
         Texture dead_fish = assets.get("/gameassets/table/dead_fish.png", Texture.class); //Textura de peixe morto
         Texture explosion = assets.get("/gameassets/table/explosion.png", Texture.class); //Textura acerto
         Texture hover = assets.get("/gameassets/table/hover.png", Texture.class); //Textura de seleção
-
+    
         
         switch(tile.getCurrentState()) {
             case 0: {
