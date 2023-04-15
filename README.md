@@ -1,37 +1,72 @@
-# Victor Gabriel - LP II
+# dubium - Fórum de Dúvidas
 
----
-
-Atividades e Trabalhos de Linguagem e Técnicas de Programação II.
-
-**Atividades solo:** Victor Gabriel Ribeiro Mariano.
-
-**Atividades e trabalhos em grupo:** Victor Gabriel, Anna Luisa e Lucas Vinicios.
-
----
-
-## Sobre:
-
-- Estudante do Ensino Técnico Integrado de Informática no CEFET-MG Campus Contagem.
+- **Grupo realizador:** Victor Gabriel, Anna Luisa e Lucas Vinicios.
   
-- Turma de Informática 3 de 2023.
-  
-- Professor: Alisson R. S.
+- **Deadline:** 24/04/2023 (13 dias desde a proposta do trabalho).
   
 
 ---
 
-## Conteúdo:
+## Introdução da proposta:
 
-    Neste repositório se encontram algumas atividades da disiciplina de LP I durante o ano letivo de 2022 e as atividades e trabalhos práticos da disciplina de LP II durante o ano letivo de 2023.
-
-- **LP I:** O conteúdo das atividades de LP I conferem a manipulação de ponteiros e listas encadeadas em C++.
+- Trabalho prático de WEB II com intúito de produzir um site/protótipo de uma rede social de fóruns focada em dúvidas dirigido a alunos, professores e ex-alunos, em especial, os alunos do CEFET-MG Campus Contagem.
   
-
-- **LP II:** O conteúdo das atividades e trabalhos práticos de LP II conferem a linguagem de programação Java e o paradigma de programação orientada a objeto.
+- "Baseada na aula sobre princípios e diretrizes do design de interface, faça a interface gráfica de uma rede social para os alunos do CEFET-Contagem. Escolha um tema/objetivo dessa rede social. Pensem na acessibilidade/inclusão, ou seja, considerem as opções de interfaces para os tipos usuários com as restrições que estudamos em sala de aula." - Kattiana Constantino
+  
 
 ---
 
-## Responsabilidade:
+## Objetivos:
 
-    Eu, Victor Gabriel, não me responsabilizo por nenhuma atividade retirada daqui para motivos de estudo ou de plágio, seja o aluno da minha atual turma ou de alguma das turmas futuras de informática.
+- A serem escritos.
+  
+
+---
+
+## Sobre o Projeto (Requisitos e Características):
+
+- Baseado em pequenos fóruns.
+  
+- Algo similar ao site StackOverflow.
+  
+- Abordagem de comunidades, inspirada na antiga rede social Orkut.
+  
+- Visual inspirado em três principais sites: StackOverflow, Reddit e Twitter.
+  
+- Os softwares utilizados para a produção do site são: Figma (modelagem), VSCode (desenvolvimento) e o framework Bootstrap (CSS).
+  
+- Com a abordagem de fóruns e comunidades, o lado positivo, é que não há necessidade de gastar muito tempo com criação de páginas, visto que o tempo para a entrega do trabalho é curto.
+  
+
+---
+
+## Desenvolvimento:
+
+- A ser escrito.
+  
+- Acompanhar os commits para mais informações.
+  
+
+---
+
+## Conclusão:
+
+- A ser escrito.
+  
+
+---
+
+## Considerações:
+
+- Não nos responsabilizamos por qualquer plágio de qualquer aluno de nosso Campus, instituição ou de quaisquer outras instituições. O repositório é aberto para consultas de outrém, porém nenhum plágio do trabalho realizado aqui é incentivado.
+  
+- Todas as fontes utilizadas estão disponíveis para uso pessoal e comercial gratuitamente e estão disponibilzadas nos sites referênciados abaixo.
+  
+- Todas as imagens e ícones de terceiros serão creditadas abaixo.
+  
+
+---
+
+## Links referênciados:
+
+- A serem escritos.
